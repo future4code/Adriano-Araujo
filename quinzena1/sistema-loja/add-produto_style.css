@@ -1,0 +1,55 @@
+/*CONTEUDO*/
+
+body{
+background-image: url(img/add-produto_back.jpg);
+background-repeat: no-repeat;
+background-size:100% 60rem;
+background-position-y:-4rem;
+}
+
+#add-product{
+    font-family:"skeleton";
+    font-size:2rem;
+    
+}
+
+#container-main{
+text-align:center;
+margin-top:2rem;
+color:white;
+margin-top:2rem;
+
+}
+
+#form{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#button{
+    margin-top:2rem;
+    font-family:"skeleton";
+    font-weight: bolder;
+    font-size: 1.2rem;;
+    width:20rem;
+    height:2.5rem;
+
+}
+
+/*RESPONSIVO*/
+
+@media(max-width:775px){
+
+    body{
+        background-image: none;
+        background:black;
+    }
+    #container-main{
+        padding-bottom:2rem;
+        margin:1rem;
+    }
+
+
+
+
+}
