@@ -1,0 +1,28 @@
+
+
+body{
+    background:black;
+    color:white;
+}h2{
+    font-family: "skeleton";
+    text-align:center;
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+table img{
+    width:10rem;
+    height:14rem;
+}
+table{
+    width:48rem;
+    margin-left:20rem;
+
+}
+
+@media(max-width:775px){
+    table{
+        width:auto;
+        margin:auto;
+    }
+
+}
