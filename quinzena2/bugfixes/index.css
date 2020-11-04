@@ -161,6 +161,10 @@ td button:hover{ /*elemento adcionado*/
     
     
 }
+
+.icone:hover{/*elemento adcionado*/
+    filter:opacity(50%);
+}
 .container-do-search {
     margin-top: 20px;
     height: 100px;
