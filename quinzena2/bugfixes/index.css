@@ -10,7 +10,10 @@
     font-family: Roboto;/*elemento adcionado*/
 
 }
+::selection{/*elemento adcionado*/
+    background:none;
 
+}
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
