@@ -68,9 +68,15 @@ div img {
   **/
 
 #container-de-descricao {
+    
+    padding-top:3rem;
     background-color: #2274a5;
     color: white;
+    
 }
+ #descricao{
+ margin-top:2rem;
+ }
 
 #container-de-descricao>ol {
     padding: 15px 0px;
