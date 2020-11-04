@@ -69,6 +69,13 @@ div img {
   *
   **/
 
+ 
+   ol{/*elemento adcionado*/
+    list-style-position: inside;
+    margin-top:2rem;
+ }
+  
+
 #container-de-descricao {
     
     padding-top:3rem;
@@ -84,6 +91,7 @@ div img {
  
 #container-de-descricao>ol {
     padding: 15px 0px;
+
 }
 
 #container-para-comprar {
@@ -113,10 +121,9 @@ input{ /*elemento alterado*/
 
 }
 
-#input_linha{ /*elemento adcionado*/
+#input_linha{  /*elemento adcionado*/
     border-bottom: black 2px solid;
 }
-
 
 table {
     width: 60%;
@@ -154,6 +161,7 @@ td button:hover{ /*elemento adcionado*/
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+
 }
 #centralizar-button{/*elemento adcionado*/
     
@@ -177,3 +185,6 @@ td button:hover{ /*elemento adcionado*/
 #back-button:hover {
     background-color: #635a3d
 }
+
+
+
