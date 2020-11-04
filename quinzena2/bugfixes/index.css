@@ -74,7 +74,7 @@ div img {
     color: white;
     
 }
- #descricao{
+ #descricao{ /*elemento adcionado*/
  margin-top:2rem;
 
  }
@@ -109,8 +109,9 @@ div:last-child {
 table {
     width: 60%;
 }
-td{
-    text-align:center;
+
+td{/*elemento adcionado*/
+    text-align:center; 
 }
 
 td img{
@@ -125,7 +126,11 @@ td button {
     border-radius: 5px;
     color: black;
 }
-.icone{
+td button:hover{ /*elemento adcionado*/
+    background-color: #ceb857;
+    color:white;
+}
+.icone{ /*elemento alterado*/
     height:2rem;
     width:2rem;
     
