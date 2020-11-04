@@ -113,6 +113,11 @@ td{
     text-align:center;
 }
 
+td img{
+    width:4rem;
+    height:4rem;
+}
+
 td button {
     background-color: #fadf63;
     width: 150px;
