@@ -120,6 +120,9 @@ input{ /*elemento alterado*/
 
 table {
     width: 60%;
+    margin-left:auto; /*elemento adcionado*/
+    margin-right:auto;/*elemento adcionado*/
+
 }
 
 td{/*elemento adcionado*/
@@ -152,9 +155,14 @@ td button:hover{ /*elemento adcionado*/
     margin-top: 20px;
     height: 100px;
 }
-
+#centralizar-button{/*elemento adcionado*/
+    
+   text-align:center;
+   margin-top:4rem;
+}
 
 #back-button {
+    
     background-color: white;
     width: 100px;
     height: 20px;
@@ -162,6 +170,8 @@ td button:hover{ /*elemento adcionado*/
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    
+    
 }
 
 #back-button:hover {
