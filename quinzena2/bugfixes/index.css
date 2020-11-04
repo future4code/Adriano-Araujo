@@ -106,6 +106,16 @@ div:last-child {
     text-align: center;
 }
 
+input{ /*elemento alterado*/
+    border-style: none;
+
+}
+
+#input_linha{ /*elemento adcionado*/
+    border-bottom: black 2px solid;
+}
+
+
 table {
     width: 60%;
 }
