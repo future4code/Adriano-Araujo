@@ -21,6 +21,12 @@ body {
     background-color: green;
 }
 
+<<<<<<< HEAD
+=======
+.yellow-background {
+    background-color: yellow;
+}
+>>>>>>> d0bda2cc4fb47fdcc92f8775158f38762fd9ba74
 
 .pink-background {
     background-color: fuchsia;
@@ -57,4 +63,8 @@ body {
 .purple-background {
     background-color: purple;
     height: 54px;
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> d0bda2cc4fb47fdcc92f8775158f38762fd9ba74

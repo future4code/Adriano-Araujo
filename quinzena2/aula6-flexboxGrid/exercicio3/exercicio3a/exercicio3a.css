@@ -16,7 +16,11 @@ body {
 #top-container{
     display:flex;
     height: 50px;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d0bda2cc4fb47fdcc92f8775158f38762fd9ba74
 }
 .green-background {
     background-color: green;
@@ -34,10 +38,17 @@ body {
 .pink-background {
     background-color: fuchsia;
     height:500px;
+<<<<<<< HEAD
 
 
 
 
+=======
+    
+    
+ 
+    
+>>>>>>> d0bda2cc4fb47fdcc92f8775158f38762fd9ba74
 }
 
 #middle-container{
@@ -50,7 +61,11 @@ body {
     background-color: blue;
     width:50rem;
     height:160px;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d0bda2cc4fb47fdcc92f8775158f38762fd9ba74
 }
 
 #vertical-middle-container{
@@ -64,7 +79,11 @@ width:20rem;
 .red-background {
     background-color: red;
     height: 80px;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d0bda2cc4fb47fdcc92f8775158f38762fd9ba74
 
 }
 
@@ -78,4 +97,8 @@ width:20rem;
 .purple-background {
     background-color: purple;
     height:54px;
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> d0bda2cc4fb47fdcc92f8775158f38762fd9ba74

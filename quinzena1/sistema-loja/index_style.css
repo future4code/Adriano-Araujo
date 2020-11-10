@@ -1,0 +1,88 @@
+
+/*MAIN/CONTEUDO*/
+
+.container_background{
+    background-image:url(img/container_background.jpg);
+    background-size:100%;
+    background-position-y:-8rem;
+    background-position-x: 12rem;
+    height:36rem;
+    width:100%;
+
+}
+.container_text{
+    float:left;
+    width:50%;
+    margin-top:2rem;
+    margin-left:1.5rem;
+    font-size:1.5rem;
+}
+
+.container_text span{
+    font-family:"halloween day's";
+    font-size:2rem;
+}
+
+.container_text img{
+    width:2rem;
+}
+#container_imagem_phone{
+    visibility: hidden;
+}
+
+/*RESPONSIVO MAIN*/
+@media(max-width:1240px){
+    .container_background{
+        background-image:none;
+    }
+}
+@media(max-width:775px){
+    .container_background{
+        background-image: unset;
+        display:flex;
+        justify-content: space-around;
+      
+    }
+    .container_text{
+       width:100%;
+    }
+    #container_imagem_phone{
+        margin-top:2rem;
+        visibility: visible;
+        width:100%;
+    }
+}
+
+/*FOOTER-ICONS/LINKS*/
+
+#footer_links_title{
+    margin-top:8rem;
+    margin-left:4rem;
+}
+#footer_links{
+    margin-left:8rem;
+    margin-top:1rem;
+}
+
+.footer_icons img{
+    width:2rem;
+    margin-left:0.5rem;
+}    
+
+/*FOOTER-ICONS/LINKS*/
+@media(max-width:600px){
+    #footer_links_title{
+        margin-top:0.5rem;
+    }
+
+}
+@media(max-width:440px){
+    #footer_links_title{
+        margin-top:0.5rem;
+        margin-left:2rem;
+    }
+    .footer_icons img{
+        margin-left:0rem;
+    }
+}
+
