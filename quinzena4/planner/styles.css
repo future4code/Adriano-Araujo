@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: rgb(241, 241, 241);
+}
+p {
+  margin-top: 1rem;
+}
+
+form {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#botoes {
+  display: flex;
+  justify-content: center;
+}
+
+#seletorHoras {
+  display: flex;
+  justify-content: center;
+}
+
+.botoesClass {
+  padding: 0.3rem;
+  margin: 1rem;
+}
+
+/*  */
+main {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.semana {
+  width: 14%;
+  padding: 5px;
+  text-align: center;
+}
+
+.segunda {
+  background-color: #f6bd60;
+}
+.terca {
+  background-color: #f7ede2;
+}
+.quarta {
+  background-color: #f5cac3;
+}
+.quinta {
+  background-color: #84a59d;
+}
+.sexta {
+  background-color: #f28482;
+}
+.sabado {
+  background-color: #ade8f4;
+}
+.domingo {
+  background-color: blanchedalmond;
+}
+
+.riskText {
+  text-decoration: line-through;
+}
+
+@media (max-width: 1200px) {
+  .semana {
+    width: 12rem;
+    height: 50%;
+    margin: 0.5rem;
+  }
+}
+@media (max-width: 900px) {
+  main {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 420px) {
+  header,
+  select {
+    margin-top: 10px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  #seletorHoras {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 380px) {
+  .semana {
+    justify-content: center;
+    width: 18rem;
+  }
+}
