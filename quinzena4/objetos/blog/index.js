@@ -1,8 +1,9 @@
 
 
 function criarPost() {
-
+  
   let arrayBlog = [];
+
   let publications = document.getElementById("container-de-posts");
 
   console.log(publications);
