@@ -13,3 +13,10 @@ Exercícios de interpretação de código
 //uma que chama a função com a opção "ações" e um valor de 150, tendo seu valor impresso no console como 165(150 x 1.1)  
  //e outra que chama a função com a opção "tesouro direto" e um valor de 200,
 //e terá impresso no console: TIPO  DE INVESTIMENTO INFORMADO INCORRETO!
+
+//3
+// O "for" pega todos os valores pares e insere ao array1, em todo outro caso, ele é adcionado ao array2.
+// Nos consoles serão impressoes respectivamente:
+// "Quantidade total de números 14"
+// 6
+// 8
