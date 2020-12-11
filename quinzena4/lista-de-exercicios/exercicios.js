@@ -20,3 +20,9 @@ Exercícios de interpretação de código
 // "Quantidade total de números 14"
 // 6
 // 8
+
+//4
+// Se o "numero" for menor do que o "numero1" o valor de "numero1" será igual ao valor de "numero", no caso do array(o "numeros")
+// esse valor será igual ao -10(o menor numero do array)
+// Agora, se o "numero" for maior do que o "numero2", o "numero2" será igual ao "numero",  no caso do array(o "numeros"), esse valor
+// será igual a 1590(o maior numero do array)
