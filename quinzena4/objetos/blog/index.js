@@ -1,7 +1,8 @@
 
+function criarPost(){
 
-function criarPost() {
-  
+alert("h")
+
   let arrayBlog = [];
 
   let publications = document.getElementById("container-de-posts");
@@ -38,8 +39,12 @@ function criarPost() {
 
   publications.innerHTML += `<b>${publicacaoTitulo}</b><br><i>${publicacaoAutor}</i><br><img src="${publicacaoImagem}"><br>${publicacaoConteudo}<br><hr> `;
 
+
+
   titulo.value = " ";
   autor.value = " ";
   conteudo.value = " ";
   imagem.value = " ";
+
+
 }

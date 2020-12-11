@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="index.js" defer></script>
 
+
     <link rel="stylesheet" href="styles.css" />
     <title>Blog</title>
   </head>
@@ -23,9 +24,23 @@
       <label for="conteudo-post">Conteúdo:</label>
       <textarea id="conteudo-post" cols="30" rows="10"></textarea>
 
-      <button id="botaoLink" onclick="criarPost()">Criar Post</button>
+    <!-- <form action="post.html"> -->
+<!-- 
+      <form onclick="criarPost()">  -->
+        
+      <button onclick="criarPost()" id="botaoLink" >
+      <a href="post.html">Criar Post</a>  
+      </button>
+        
+      <!-- </form> -->
+
+     
+   
+    <!-- </form >  -->
     </section>
 
-    <section id="container-de-posts"></section>
+    <!-- <section id="container-de-posts"></section> -->
+
+
   </body>
 </html>
