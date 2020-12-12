@@ -42,4 +42,11 @@ let index = 0 // programa que o percorre
     console.log(array[index])
  }
 
+ //2
+ // a. false
+ // b. false
+ // c. true
+ // d. true
+ // e. true
+
  
