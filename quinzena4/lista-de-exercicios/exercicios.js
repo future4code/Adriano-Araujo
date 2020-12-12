@@ -1,6 +1,5 @@
 /*
-Exercícios de interpretação de código
-*/
+EXERCÍCIOS DE INTERPRETAÇÃO DE CÓDIGO*/
 
 //1
 //A função irá à partir do "input" da const cotação(que pede a cotação do dolar), multiplicar o valor inserido pelo valor seguinte,
@@ -26,3 +25,21 @@ Exercícios de interpretação de código
 // esse valor será igual ao -10(o menor numero do array)
 // Agora, se o "numero" for maior do que o "numero2", o "numero2" será igual ao "numero",  no caso do array(o "numeros"), esse valor
 // será igual a 1590(o maior numero do array)
+
+
+/*
+LÓGICA DE PROGRAMAÇÃO
+*/ 
+
+//1
+// Com for, for of, e forEach
+
+//array a ser precorrido
+let array = [2, 4, 6, 8, 9, 10, 11, 14, 18]
+
+let index = 0 // programa que o percorre
+ for (index; index < array.length; index++) {
+    console.log(array[index])
+ }
+
+ 
