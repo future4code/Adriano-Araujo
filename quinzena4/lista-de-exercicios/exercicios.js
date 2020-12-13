@@ -143,3 +143,12 @@ const future4 = ()=>{
 }
 
 future4()
+
+/*
+EXERCÍCIO DE OBJETOS  ///////////////////////////////////////////
+*/ 
+
+// 1 Arrays são listas,objetos são uma espécie de lista onde os valores possuem com características específicas,
+// como objets do nosso mundo real.
+// As listas e objetos facilitam o agrupamento de valores de um ou mais tipos em uma variavel.
+
