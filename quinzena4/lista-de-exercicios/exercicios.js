@@ -170,4 +170,21 @@ console.log(criaRetangulo(32, 45))
 
 // 3
 
+const filmeFavorito = {
+  titulo:"'A Felicidade Não Se Compra'",
+  ano:1946,
+  diretor:"Frank Capra",
+  elenco:[
+       "James Stewart",
+       "Donna Reed",
+       "Lionel Barrymore",
+       "Thomas Mitchell"
+        ]
+}
+
+console.log(
+`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano},
+dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.elenco[0]},
+${filmeFavorito.elenco[1]}, ${filmeFavorito.elenco[2]}, ${filmeFavorito.elenco[3]} ! `
+)
 
