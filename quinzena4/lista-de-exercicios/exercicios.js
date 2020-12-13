@@ -111,7 +111,7 @@ const matematica = (num1, num2) => {
 }
 
 /*
-EXERCÍCIO DE FUNÇÕES  ///////////////////////////////////////////
+EXERCÍCIOS DE FUNÇÕES  ///////////////////////////////////////////
 */ 
 
 // 1
@@ -145,7 +145,7 @@ const future4 = ()=>{
 future4()
 
 /*
-EXERCÍCIO DE OBJETOS  ///////////////////////////////////////////
+EXERCÍCIOS DE OBJETOS  ///////////////////////////////////////////
 */ 
 
 // 1 
@@ -205,3 +205,23 @@ let pessoa = {
   console.log(pessoa)
   anonimizarPessoa(pessoa)
   
+/*
+EXERCÍCIOS DE FUNÇÕES DE ARRAY  ///////////////////////////////////////////
+*/ 
+
+// 1
+let people =
+  [
+    { nome: "Pedro", idade: 20 },
+    { nome: "João", idade: 10 },
+    { nome: "Paula", idade: 12 },
+    { nome: "Artur", idade: 89 }
+  ]
+
+const maiores = people.filter(age => age.idade >= 20) // a
+const menores = people.filter(age => age.idade < 20)  // b
+
+
+console.log(people)
+console.log(maiores)
+console.log(menores)
