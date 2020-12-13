@@ -58,3 +58,15 @@ let index = 0 // programa que o percorre
      console.log(i*2)
  }
  
+ //4
+ const tipoTriangulo = (a,b,c) =>{
+   if(a == b && b == c){
+     console.log("equilátero")
+   }else if(a !==b && b !== c && c !== a){
+     console.log("escaleno")
+   }else{
+     console.log("isósceles")
+   }
+  
+  }
+  
