@@ -148,7 +148,23 @@ future4()
 EXERCÍCIO DE OBJETOS  ///////////////////////////////////////////
 */ 
 
-// 1 Arrays são listas,objetos são uma espécie de lista onde os valores possuem com características específicas,
+// 1 
+// Arrays são listas,objetos são uma espécie de lista onde os valores possuem com características específicas,
 // como objets do nosso mundo real.
 // As listas e objetos facilitam o agrupamento de valores de um ou mais tipos em uma variavel.
+
+// 2
+
+function criaRetangulo(lado1, lado2) {
+
+  let retangulo = [ ]
+  retangulo.largura = lado1
+  retangulo.altura = lado2
+  retangulo.perimetro = 2 * (lado1 + lado2)
+  retangulo.area = lado1 * lado2
+
+  return retangulo
+}
+console.log(criaRetangulo(10, 25))
+console.log(criaRetangulo(32, 45))
 
