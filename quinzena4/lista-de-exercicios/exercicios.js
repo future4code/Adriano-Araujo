@@ -188,3 +188,20 @@ dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.elenco[0]}
 ${filmeFavorito.elenco[1]}, ${filmeFavorito.elenco[2]}, ${filmeFavorito.elenco[3]} ! `
 )
 
+// 4
+let pessoa = {
+  nome:"Alf",
+  idade:285,
+  email:"alf@oeteimoso.com",
+  endereco:"Los Angeles, USA - Terra",
+  }
+  
+  function anonimizarPessoa(anonimo){
+   anonimo.nome="ANÔNIMO"
+   return anonimo
+  
+    }
+  
+  console.log(pessoa)
+  anonimizarPessoa(pessoa)
+  
