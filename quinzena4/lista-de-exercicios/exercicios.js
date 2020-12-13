@@ -157,7 +157,7 @@ EXERCÍCIO DE OBJETOS  ///////////////////////////////////////////
 
 function criaRetangulo(lado1, lado2) {
 
-  let retangulo = [ ]
+  let retangulo = {}
   retangulo.largura = lado1
   retangulo.altura = lado2
   retangulo.perimetro = 2 * (lado1 + lado2)
@@ -167,4 +167,7 @@ function criaRetangulo(lado1, lado2) {
 }
 console.log(criaRetangulo(10, 25))
 console.log(criaRetangulo(32, 45))
+
+// 3
+
 
