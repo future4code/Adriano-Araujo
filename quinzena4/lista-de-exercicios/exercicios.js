@@ -110,3 +110,29 @@ const matematica = (num1, num2) => {
 
 }
 
+/*
+EXERCÍCIO DE FUNÇÕES  ///////////////////////////////////////////
+*/ 
+
+// 1
+let array = [10, 30, 70, 20, 40, 35]
+
+function penultimos(arr) {
+
+  let maior = Math.max(...arr)
+  let menor = Math.min(...arr)
+
+   let maiorIndex = arr.indexOf(maior)
+   let menorIndex = arr.indexOf(menor)
+
+  arr.splice(maiorIndex, 1)
+  arr.splice(menorIndex, 1)
+
+   let segundoMaior = Math.max(...arr)
+   let segundoMenor = Math.min(...arr)
+
+ console.log(segundoMaior)
+ console.log(segundoMenor)
+}
+
+console.log(penultimos(array))
