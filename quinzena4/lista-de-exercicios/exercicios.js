@@ -28,7 +28,7 @@ EXERCÍCIOS DE INTERPRETAÇÃO DE CÓDIGO*/
 
 
 /*
-LÓGICA DE PROGRAMAÇÃO
+LÓGICA DE PROGRAMAÇÃO ///////////////////////////////////////////
 */ 
 
 //1
@@ -69,4 +69,44 @@ let index = 0 // programa que o percorre
    }
   
   }
-  
+
+// 5
+
+// Variavéis com o textos e valores para função
+const textoMaior = "O maior é:"
+const iguais = "Ambos os números são iguais"
+const divisivel = "é divisível por"
+const naoDivisivel = "não é divisível por"
+const diferenca = "A  diferença entre eles é "
+
+let subtracao
+//função
+const matematica = (num1, num2) => {
+  if (num1 > num2) {
+    console.log(textoMaior, num1)
+    subtracao = num1 - num2
+  } else if (num1 < num2) {
+    console.log(textoMaior, num2)
+    subtracao = num2 - num1
+  } else {
+    console.log(iguais)
+  }
+
+  if (num1 % num2 == 0) {
+    console.log(num2, naoDivisivel, num1
+      + '\n' +
+      num1, divisivel, num2)
+  } else if (num2 % num1 == 0) {
+    console.log(num1, naoDivisivel, num2
+      + '\n' +
+      num2, divisivel, num1)
+  } else if (num1 % num2 !== 0) {
+    console.log(num1, naoDivisivel, num2)
+  } else if (num2 % num1 !== 0) {
+    console.log(num2, naoDivisivel, num1)
+  }
+
+  console.log(diferenca, subtracao)
+
+}
+
