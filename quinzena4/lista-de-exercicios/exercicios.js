@@ -225,3 +225,27 @@ const menores = people.filter(age => age.idade < 20)  // b
 console.log(people)
 console.log(maiores)
 console.log(menores)
+
+// 2
+const array = [1, 2, 3, 4, 5, 6]
+function dobro() { // a
+  array.forEach(numero => console.log(numero * 2))
+}
+function triplo() { // b
+  array.forEach(numero => console.log(`"${numero * 3}"`))
+}
+function parImpar() {
+   array.forEach((numero) => { // c
+     if (numero % 2 !== 0) {
+      console.log(`${numero} é ímpar`)
+     } else {
+      console.log(`${numero} é par `)
+     }
+   })
+
+}
+
+dobro(array)
+triplo(array)
+parImpar(array)
+
