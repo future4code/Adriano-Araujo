@@ -136,3 +136,10 @@ function penultimos(arr) {
 }
 
 console.log(penultimos(array))
+
+// 2
+const future4 = ()=>{
+  alert("Hello Future4")
+}
+
+future4()
