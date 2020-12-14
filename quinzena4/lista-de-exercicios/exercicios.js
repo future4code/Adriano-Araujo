@@ -271,3 +271,25 @@ let naoPermitidos = pessoas.filter((cada) => { //b
 console.log(permitidos)//a
 console.log(naoPermitidos)//b
 
+// 4
+
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+
+let confirmado = consultas.map((cada) => {
+  return `Olá, Sr./Sra. ${cada.nome}. Estamos enviando esta mensagem para lembrá-lo/la da sua consulta no dia ${cada.dataDaConsulta}.Por favor, acuse o recebimento deste e - mail.`;
+});
+
+let cancelado = consultas.map((cada) => {
+  return `Olá,Sr./Sr.a ${cada.nome}. Infelizmente, sua consulta marcada para o dia ${cada.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá - la`;
+});
+
+console.log(confirmado);
+console.log(cancelado);
+
+//5
