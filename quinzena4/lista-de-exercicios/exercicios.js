@@ -293,3 +293,5 @@ console.log(confirmado);
 console.log(cancelado);
 
 //5
+
+//...
