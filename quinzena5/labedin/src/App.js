@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
+import CardPequeno from './components/CardPequeno/CardPequeno';
+
 
 function App() {
   return (
@@ -47,6 +49,12 @@ function App() {
           endereco="https://twitter.com/home"
           imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png" 
           texto="Twitter" 
+          
+        />        
+          <CardPequeno 
+          email="araujo_ir@yahoo.com"
+          onde="Belford Roxo/ RJ"
+        
           
         />        
       </div>
