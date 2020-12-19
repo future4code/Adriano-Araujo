@@ -1,6 +1,7 @@
-.bigcard-container {
+.endereco-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     border: 1px solid rgb(211, 211, 211);
     box-shadow: -11px 14px 14px -4px rgba(0,0,0,0.13);
     padding: 20px 10px;
@@ -8,21 +9,21 @@
     height: 200px;
     background-color: white;
 
-
 }
-
-.bigcard-container > img {
-    width: 70px;
+.endereco-container > img {
+    width: 100px;
     margin-right: 10px;
     border-radius: 50%;
 }
 
-.bigcard-container h4 {
+
+.endereco-container h4 {
     margin-bottom: 15px;
 }
 
-.bigcard-container > div {
+.endereco-container > div {
     display: flex;
     flex-direction: column;
+    justify-content:center;
     justify-items: flex-start;
 }
