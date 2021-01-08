@@ -89,7 +89,7 @@ class App extends React.Component {
             placeholder={"Mensagem"}
           />
 
-          <button onClick={this.Add}> enviar </button>{" "}
+          <button onClick={this.Add}>enviar</button>{" "}
         </section>{" "}
 
       </main>
