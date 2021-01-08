@@ -2,7 +2,6 @@ console.log("Bem vindo ao jogo de Blackjack!"); // Mensagem inicial
 
 
 
-console.log("Bem vindo ao jogo de Blackjack!");
 //Chamando a função comprar carta
 const userCardOne = comprarCarta(); 
 const userCardTwo = comprarCarta();
