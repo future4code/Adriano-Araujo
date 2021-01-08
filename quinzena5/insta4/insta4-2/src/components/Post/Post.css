@@ -9,12 +9,10 @@
     display: flex;
     align-items: center;
     padding-left: 10px;
+    justify-content: space-around;
 }
 
-.marcador-icon{
-    position:relative;
-    left:60%;    
-}
+
 
 .post-footer {
     height: 40px;
@@ -34,3 +32,4 @@
 .post-photo {
     width: 100%;
 }
+
