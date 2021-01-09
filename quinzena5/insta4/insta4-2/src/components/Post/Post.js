@@ -8,6 +8,9 @@ import marcadorBranco from '../../img/bookmark_white.svg'
 import marcadorPreto from '../../img/bookmark.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
+import iconeCompartilhar from '../../img/share.svg'
+
+import  {Compartilhar}  from '../Compartilhar/Compartilhar.js'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
 class Post extends React.Component {
@@ -16,7 +19,8 @@ class Post extends React.Component {
     numeroCurtidas: 0,
     comentando: false,
     numeroComentarios: 0,
-    marcado:false
+    marcado:false,
+    compartilhar:false
   }
 
   onClickCurtida = () => {
@@ -43,6 +47,16 @@ class Post extends React.Component {
    
   }
 
+  //desafio2
+  onClickCompartilhar = () => {
+    this.setState({
+      compartilhar: !this.state.compartilhar
+
+    })
+   
+  }
+  //desafio2
+
   
   aoEnviarComentario = () => {
 
@@ -52,21 +66,21 @@ class Post extends React.Component {
     })
 
 }
-//desafio
+//desafio1
 onClickMark =() =>{
   this.setState({
     marcado: !this.state.marcado
 
   })
 }
-//desafio
+//desafio1
   
 
   render() {
 
 
 
-// desafio
+// desafio1
 let marcador 
 
 if(this.state.marcado){
@@ -76,7 +90,7 @@ if(this.state.marcado){
   marcador = marcadorBranco
 
 }
-// desafio
+// desafio1
 
 
     let iconeCurtida
@@ -92,6 +106,13 @@ if(this.state.marcado){
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
+
+    let compartilhar
+    
+    if(this.state.compartilhar) {
+      compartilhar = <Compartilhar/>
+    }
+
 
   
 
@@ -125,8 +146,15 @@ if(this.state.marcado){
           onClickIcone={this.onClickComentario}
           valorContador={this.state.numeroComentarios}
         />
+
+          <IconeComContador
+          icone={iconeCompartilhar}
+          onClickIcone={this.onClickCompartilhar}
+          // valorContador={this.state.numeroComentarios}
+        /> 
       </div>
       {componenteComentario}
+      {compartilhar}
     
     </div>
   }
