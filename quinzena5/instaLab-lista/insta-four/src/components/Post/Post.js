@@ -1,5 +1,7 @@
 import React from 'react'
-import './Post.css'
+import styled from "styled-components";
+
+
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
@@ -14,6 +16,54 @@ import iconeCompartilhar from '../../img/share.svg'
 
 import  {Compartilhar}  from '../Compartilhar/Compartilhar.js'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
+
+
+
+
+// style
+// desafio 1
+
+const PostContainer = styled.div`
+  border: 1px solid gray;
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background: white;
+  box-shadow: -8px 17px 11px -3px rgba(0, 0, 0, 0.75);
+`;
+
+const PostHeader = styled.div`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  justify-content: space-around;
+`;
+
+const PostFooter = styled.div`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: space-between;
+`;
+
+const UserPhoto = styled.img`
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+`;
+
+const PostPhoto = styled.img`
+  width: 100%;
+`;
+// desafio 1
+//style 3
+
+
+
+
 
 class Post extends React.Component {
   state = {
@@ -119,11 +169,12 @@ if(this.state.marcado){
   
 
 
-    return <div className={'post-container'}>
-      <div className={'post-header'}>
+    return <PostContainer>
+
+      <PostHeader>
 
 
-        <img className={'user-photo'} src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
+        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{this.props.nomeUsuario}</p>
 
         <IconeComContador
@@ -132,11 +183,11 @@ if(this.state.marcado){
         />
 
 
-      </div>
+      </PostHeader>
 
-      <img className={'post-photo'} src={this.props.fotoPost} alt={'Imagem do post'}/>
+      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
 
-      <div className={'post-footer'}>
+      <PostFooter>
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={this.onClickCurtida}
@@ -154,11 +205,11 @@ if(this.state.marcado){
           onClickIcone={this.onClickCompartilhar}
           // valorContador={this.state.numeroComentarios}
         /> 
-      </div>
+      </PostFooter>
       {componenteComentario}
       {compartilhar}
     
-    </div>
+    </PostContainer>
   }
 
 }
