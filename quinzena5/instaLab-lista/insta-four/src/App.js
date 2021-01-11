@@ -122,8 +122,8 @@ class App extends React.Component {
           <h2>Insta4</h2>
 
 
-
           {/* checkpoint 2 */}
+          
           <NovoPostInputStyle>
             <InputStyle
               value={this.state.nomeUsuario}
@@ -147,6 +147,9 @@ class App extends React.Component {
           {/* checkpoint 2 */}
 
           {postDosUsuarios}
+
+
+
         </ContainerStyle>
 
       </MainStyle>

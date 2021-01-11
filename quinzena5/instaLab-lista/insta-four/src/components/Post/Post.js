@@ -17,9 +17,6 @@ import iconeCompartilhar from '../../img/share.svg'
 import  {Compartilhar}  from '../Compartilhar/Compartilhar.js'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
-
-
-
 // style
 // desafio 1
 
@@ -59,7 +56,7 @@ const PostPhoto = styled.img`
   width: 100%;
 `;
 // desafio 1
-//style 3
+//style 
 
 
 
@@ -72,7 +69,8 @@ class Post extends React.Component {
     comentando: false,
     numeroComentarios: 0,
     marcado:false,
-    compartilhar:false
+    compartilhar:false,
+  
   }
 
   onClickCurtida = () => {
@@ -109,14 +107,17 @@ class Post extends React.Component {
   }
   //desafio2
 
-  
+ 
+
   aoEnviarComentario = () => {
 
     this.setState({
       comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
-    })
+      numeroComentarios: this.state.numeroComentarios + 1,
+      
 
+    })
+  
 }
 //desafio1
 onClickMark =() =>{
@@ -143,6 +144,9 @@ if(this.state.marcado){
 
 }
 // desafio1
+
+
+
 
 
     let iconeCurtida
@@ -188,6 +192,7 @@ if(this.state.marcado){
       <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
 
       <PostFooter>
+        
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={this.onClickCurtida}
@@ -203,10 +208,11 @@ if(this.state.marcado){
           <IconeComContador
           icone={iconeCompartilhar}
           onClickIcone={this.onClickCompartilhar}
-          // valorContador={this.state.numeroComentarios}
         /> 
       </PostFooter>
+
       {componenteComentario}
+
       {compartilhar}
     
     </PostContainer>
