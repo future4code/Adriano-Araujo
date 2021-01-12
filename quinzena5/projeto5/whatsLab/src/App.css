@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url("https://images.vexels.com/media/users/3/205157/isolated/preview/3a1d0d70d14ba68cd27271c889618e51-ilustra-ccedil-atilde-o-do-espa-ccedil-o-astronauta-by-vexels.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat {
+  width: 400px;
+  height: 600px;
+  background: linear-gradient(
+    90deg,
+    hsla(29, 92%, 70%, 1) 0%,
+    hsla(0, 87%, 73%, 1) 100%
+  );
+  filter: opacity(85%);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.inputs {
+  width: 400px;
+}
+
+#inputUser {
+  width: 20%;
+}
+
+#inputMessage {
+  width: 60%;
+}
+
+#messages {
+  overflow: auto;
+  position: sticky;
+  top: 10px;
+  font-family: "Roboto", sans-serif;
+  margin-left: 4px;
+}
+
+.chatAddBoldColor {
+  font-weight: bolder;
+  background: rgb(142, 201, 250);
+}
+
+.rightAlign {
+  text-align: right;
+  padding-right: 14px;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+
+/*
+*/
+
+@media (max-width: 380px) {
+  body {
+    transform: scale(0.8);
+    font-size: 22px;
+  }
+
+  #inputUser,
+  #inputMessage {
+    margin-top: 15px;
+    height: 32px;
+  }
+  #inputMessage{
+    width:50%;
+  }
+  button {
+    height: 40px;
+    width:20%;
+    font-size:18px;
+  }
+
+  input {
+    font-size: 18px;
+  }
+}
