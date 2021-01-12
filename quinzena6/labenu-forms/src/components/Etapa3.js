@@ -1,4 +1,6 @@
 import React from 'react';
+import PerguntaAberta from './PerguntaAberta';
+import PerguntaFechada from './PerguntaFechada';
 
 
 class Etapa3 extends React.Component {
@@ -10,17 +12,14 @@ class Etapa3 extends React.Component {
 
              <h3>Etapa 3- Informações Gerais de Ensino</h3> 
 
-             <div>
-                 <p>1. Por que você não terminou um curso de Graduação?</p>
-                 <input type="text"/>
-             </div>
+             <PerguntaAberta pergunta={'1. Por que você não terminou um curso de graduação?'}/>
 
-             <div>
-                 <p>2. Você fez algum curso complementar?</p>
-                 <input type="text"/>
-             </div>
+             <PerguntaFechada pergunta={'2. Você fez algum curso complementar?'}
+                    opcao1={'Nenhum'}
+                    opcao2={'Curso Técnico'}
+                    opcao3={'Curso de Inglês'}
+            />
 
-          
 
           </main>
       );
