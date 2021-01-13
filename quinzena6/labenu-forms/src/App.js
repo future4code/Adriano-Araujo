@@ -9,6 +9,30 @@ import Final from '../src/components/Final';
 import './App.css';
 
 
+
+  const Container = styled.main `
+   background: linear-gradient(90deg, hsla(29, 92%, 70%, 1) 0%, hsla(0, 87%, 73%, 1) 100%);
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   width:100vw;
+   height:100vh;
+  `
+
+  const FormStyle = styled.section `
+    border-radius:4%;
+    width:310px;
+    height:400px;
+    background:white;
+    box-shadow: -4px 14px 15px 0px rgba(0,0,0,0.72);
+
+   `
+   const ButtonStyle = styled.button `
+   margin-top:10px;
+
+  `
+
+
 class App extends React.Component {
   state = {
      etapa: 1
@@ -39,10 +63,12 @@ class App extends React.Component {
     };
 
     return (
-      <main>
+      <Container>
+        <FormStyle>
          {renderizaEtapa()}
-         {this.state.etapa !== 4 && <button onClick={this.onClickProximaEtapa}>Proxima etapa</button>}
-      </main>
+         {this.state.etapa !== 4 && <ButtonStyle onClick={this.onClickProximaEtapa}>Proxima etapa</ButtonStyle>}
+        </FormStyle>
+      </Container>
     );
   }
 }

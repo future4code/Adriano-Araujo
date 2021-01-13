@@ -1,5 +1,5 @@
 import React from 'react';
-
+import approved from '../img/austinApproved.jpg';
 
 class Final extends React.Component {
     render() {
@@ -11,6 +11,8 @@ class Final extends React.Component {
              <h3>O Formulário Acabou!</h3> 
 
              <p>Obrigado por participar! Entraremos em contato</p>
+             <img  src={approved} alt="Austin Power aprova!"/>
+
             
           </main>
       );
