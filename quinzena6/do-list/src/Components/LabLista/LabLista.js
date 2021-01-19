@@ -28,7 +28,7 @@ class ToDoList extends React.Component {
     }
 
   componentDidUpdate() {
-    // localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas))
+    localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas))
 
 
   };
@@ -36,7 +36,7 @@ class ToDoList extends React.Component {
   componentDidMount() {
 
     if (localStorage.getItem("tarefas")){
-    //   this.setState({ tarefas: JSON.parse(localStorage.getItem("tarefas"))})
+      this.setState({ tarefas: JSON.parse(localStorage.getItem("tarefas"))})
     }
 
   };
