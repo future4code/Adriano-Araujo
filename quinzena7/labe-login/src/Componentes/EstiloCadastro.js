@@ -28,8 +28,6 @@ export const UsuariosContainer = styled.div`
   align-items: center;
   flex-direction: column;
   background: hsla(28, 80%, 61%, 0.3);
-
-
 `;
 
 export const Lista = styled.p`
@@ -37,11 +35,11 @@ export const Lista = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  text-transform:uppercase;
+  text-transform: uppercase;
   background: white;
   border-radius: 3%;
-  padding:0.1rem;
-  margin-left:1rem;
+  padding: 0.1rem;
+  margin-left: 1rem;
   box-shadow: 1px 2px 15px 0px black;
 `;
 
@@ -58,6 +56,6 @@ export const BotaoDeletar = styled.button`
 export const BotaoRetornar = styled.button`
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode";
-    margin-top:2rem;
+  margin-top: 2rem;
   box-shadow: -1px 6px 14px 0px rgba(0, 0, 0, 0.75);
 `;
