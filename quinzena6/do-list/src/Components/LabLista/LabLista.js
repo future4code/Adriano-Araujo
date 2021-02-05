@@ -1,111 +1,95 @@
-import React from 'react'
-import styled from 'styled-components'
-
-
-
+import React from "react";
+import styled from "styled-components";
 
 const TareDaList = styled.ul`
   padding: 0;
   width: 200px;
-`
+`;
 
 const Tarefa = styled.li`
   text-align: left;
-  text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
-`
+  text-decoration: ${({ completa }) => (completa ? "line-through" : "none")};
+`;
 
 const InputsContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
-`
+`;
 
 class ToDoList extends React.Component {
-    state = {
-      tarefas: [],
-      inputValue: ' ',
-      filtro: ''
-    }
+  state = {
+    tarefas: [],
+    inputValue: " ",
+    filtro: "",
+  };
 
   componentDidUpdate() {
-    localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas))
-
-
-  };
+    localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
+  }
 
   componentDidMount() {
-
-    if (localStorage.getItem("tarefas")){
-      this.setState({ tarefas: JSON.parse(localStorage.getItem("tarefas"))})
+    if (localStorage.getItem("tarefas")) {
+      this.setState({ tarefas: JSON.parse(localStorage.getItem("tarefas")) });
     }
-
-  };
+  }
 
   onChangeInput = (event) => {
-    this.setState({ inputValue: event.target.value});
-  }
-
-  
+    this.setState({ inputValue: event.target.value });
+  };
 
   criaTarefa = () => {
+    let inputTarefa = {
+      id: Date.now(),
+      texto: this.state.inputValue,
+      completa: false,
+    };
 
-    let inputTarefa ={
-      id:Date.now(),
-      texto:this.state.inputValue,
-      completa:false
-    }
-
-    const novoTarefaArray =[
-      inputTarefa, ...this.state.tarefas
-    ]
-    this.setState({tarefas:novoTarefaArray});
-
-  }
+    const novoTarefaArray = [inputTarefa, ...this.state.tarefas];
+    this.setState({ tarefas: novoTarefaArray });
+  };
 
   selectTarefa = (id) => {
-
-    const listaDeTarefas = this.state.tarefas.map(tarefa =>{
-      if (id === tarefa.id){
-        const novaListaDeTarefas= {
-          ...tarefa, 
-          completa: !tarefa.completa}
-          return novaListaDeTarefas
+    const listaDeTarefas = this.state.tarefas.map((tarefa) => {
+      if (id === tarefa.id) {
+        const novaListaDeTarefas = {
+          ...tarefa,
+          completa: !tarefa.completa,
+        };
+        return novaListaDeTarefas;
       } else {
-        return tarefa
+        return tarefa;
       }
-    })
-      this.setState({tarefas: listaDeTarefas}) 
-  
-
-  }
+    });
+    this.setState({ tarefas: listaDeTarefas });
+  };
 
   onChangeFilter = (event) => {
-
-    this.setState({ 
-      filtro: event.target.value
+    this.setState({
+      filtro: event.target.value,
     });
-  }
+  };
 
   render() {
-    const listaFiltrada = this.state.tarefas.filter(tarefa => {
+    const listaFiltrada = this.state.tarefas.filter((tarefa) => {
       switch (this.state.filtro) {
-        case 'pendentes':
-          return !tarefa.completa
-        case 'completas':
-          return tarefa.completa
+        case "pendentes":
+          return !tarefa.completa;
+        case "completas":
+          return tarefa.completa;
         default:
-          return true
+          return true;
       }
-    })
+    });
 
     return (
       <div className="App">
         <h1>Lista de tarefas</h1>
         <InputsContainer>
-          <input value={this.state.inputValue} onChange={this.onChangeInput}/>
+          <input value={this.state.inputValue} onChange={this.onChangeInput} />
           <button onClick={this.criaTarefa}>Adicionar</button>
         </InputsContainer>
-        <br/>
+        <br />
 
         <InputsContainer>
           <label>Filtro</label>
@@ -116,7 +100,7 @@ class ToDoList extends React.Component {
           </select>
         </InputsContainer>
         <TareDaList>
-          {listaFiltrada.map(tarefa => {
+          {listaFiltrada.map((tarefa) => {
             return (
               <Tarefa
                 completa={tarefa.completa}
@@ -124,12 +108,12 @@ class ToDoList extends React.Component {
               >
                 {tarefa.texto}
               </Tarefa>
-            )
+            );
           })}
         </TareDaList>
       </div>
-    )
+    );
   }
 }
 
-export default ToDoList
+export default ToDoList;
