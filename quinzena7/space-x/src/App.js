@@ -1,7 +1,6 @@
 import React from "react";
 import Satelites from "./Componentes/Satelites";
-import imagemPrincipal from "./assets/spaceX.jpg";
-import LogoSpace from "./assets/spacex.png";
+import imagemPrincipal from "./assets/backx.png";
 
 import {
   TamanhoImagem,
@@ -28,11 +27,10 @@ class App extends React.Component {
         {this.state.ativo ? (
           <section>
             <Satelites />
-            <button onClick={this.sair}>Sair</button>
+            <BotoesContainer><button onClick={this.sair}>Sair</button></BotoesContainer>
           </section>
         ) : (
           <PaginaEntrar>
-            <img src={LogoSpace} alt={"logo"} />
 
             <TamanhoImagem src={imagemPrincipal} alt={""} />
             <BotoesContainer>

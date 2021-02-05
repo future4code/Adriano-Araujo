@@ -1,11 +1,20 @@
 import React from "react";
 import axios from "axios";
+import estilos from '../EstiloGeral/App.css'
+import Enterprise from '../assets/butonprise.jpg'
+
+
 import {
   TelaSatelites,
   TamanhosSatelites,
   Sumario,
   BotoesContainer,
-  TelaPrincipal
+  TelaPrincipal,
+  ImagemNave,
+  ContainerSatelites,
+  CorParagrafo,
+  CardDescricao
+  
 } from "../EstiloGeral/EstilosGerais";
 
 class Satelites extends React.Component {
@@ -24,29 +33,32 @@ class Satelites extends React.Component {
     }
   };
 
+ 
+
   render() {
+  
     const exibir = this.state.emOrbita.map((item) => {
       return (
-        <TelaSatelites>
+        <main>
           <TamanhosSatelites src={item.flickr_images} alt={"satelites"} />
-          <details>
+          <CardDescricao>
             <Sumario>
               <p key={item.id}>
                 {item.name} - {item.type}
               </p>
             </Sumario>
-            <p>{item.description}</p>
-          </details>
-        </TelaSatelites>
+            <CorParagrafo>{item.description}</CorParagrafo>
+          </CardDescricao>
+        </main>
+
       );
     });
 
     return (
-      <main>
-        {exibir}
-
-        <BotoesContainer><button onClick={this.pegarDragons}>AAA</button></BotoesContainer>
-      </main>
+      <TelaSatelites>
+        <ContainerSatelites>{exibir}</ContainerSatelites>
+        <ImagemNave onClick={this.pegarDragons} src={Enterprise} alt={'a'}/>
+      </TelaSatelites>
     );
   }
 }
