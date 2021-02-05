@@ -64,10 +64,10 @@ justify-content:center;
 
 export const CorParagrafo = styled.p`
 color:white;
-text-align:center;
+
 `
 
 export const CardDescricao = styled.details`
-width:200px;
+width:300px;
 `
 
