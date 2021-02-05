@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Satelites from "./Componentes/Satelites";
+import imagemPrincipal from "./assets/spaceX.jpg";
+import LogoSpace from "./assets/spacex.png";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  TamanhoImagem,
+  TelaPrincipal,
+  BotoesContainer,
+  PaginaEntrar
+} from "./EstiloGeral/EstilosGerais";
+
+class App extends React.Component {
+  state = {
+    ativo: false,
+  };
+
+  entrar = () => {
+    this.setState({ ativo: true });
+  };
+  sair = () => {
+    this.setState({ ativo: false });
+  };
+
+  render() {
+    return (
+      <TelaPrincipal>
+        {this.state.ativo ? (
+          <section>
+            <Satelites />
+            <button onClick={this.sair}>Sair</button>
+          </section>
+        ) : (
+          <PaginaEntrar>
+            <img src={LogoSpace} alt={"logo"} />
+
+            <TamanhoImagem src={imagemPrincipal} alt={""} />
+            <BotoesContainer>
+              <button onClick={this.entrar}>Entrar</button>
+            </BotoesContainer>
+          </PaginaEntrar>
+        )}
+      </TelaPrincipal>
+    );
+  }
 }
 
 export default App;
