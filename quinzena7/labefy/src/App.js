@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Playlist from './Componentes/Playlist'
+import styled from 'styled-components'
 
-function App() {
+
+const Titulo = styled.h1`
+text-align:center;
+`
+class App extends React.Component {
+
+  state={
+    ativo:false
+  }
+  
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+      <Titulo>LabeFy</Titulo>
+ <Playlist/>
+    </main>
+  )
+  }
+
 }
 
 export default App;
