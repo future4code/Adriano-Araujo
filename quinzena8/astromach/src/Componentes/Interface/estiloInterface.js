@@ -10,6 +10,13 @@ export const Container = styled.body`
     hsla(197, 100%, 63%, 1) 0%,
     hsla(294, 100%, 55%, 1) 100%
   );
+
+  @media (max-width: 800px) {
+    height: 110vh;
+  }
+  @media (max-width: 540px) {
+    height: 120vh;
+  }
 `;
 
 export const Logo = styled.img`
