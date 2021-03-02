@@ -1,13 +1,14 @@
-import React from 'react';
-import TelaPrincipal from './Componentes/TelaPrincipal/TelaPrincipal'
+import React from "react";
+import Interface from "./Componentes/Interface/Interface";
 
 
-function App() {
+const App = () => {
   return (
-    <main>
-     <TelaPrincipal/>
-    </main>
+    <div>
+      <Interface />
+    </div>
+
   );
-}
+};
 
 export default App;
