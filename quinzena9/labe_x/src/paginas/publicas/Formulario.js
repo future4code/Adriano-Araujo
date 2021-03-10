@@ -1,5 +1,5 @@
 import React from "react";
-import { voltar } from "../../routes/CaminhosPaginas";
+import { voltar } from "../../rotas/CaminhosPaginas";
 import { useHistory } from "react-router-dom";
 
 const Formulario = () => {

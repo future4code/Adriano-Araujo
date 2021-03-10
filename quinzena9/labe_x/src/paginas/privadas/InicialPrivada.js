@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { viagens, administrar } from "../../routes/CaminhosPaginas";
+import { viagens, administrar } from "../../rotas/CaminhosPaginas";
 
 const InicialPrivada = () => {
   const history = useHistory();

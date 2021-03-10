@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { voltar } from "../../routes/CaminhosPaginas";
+import { voltar } from "../../rotas/CaminhosPaginas";
 
 const Administrar = () => {
   const history = useHistory();

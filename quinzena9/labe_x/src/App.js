@@ -1,4 +1,4 @@
-import Router from "./routes/Router";
+import Router from "./rotas/Router";
 
 function App() {
   return (

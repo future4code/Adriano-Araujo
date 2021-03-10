@@ -1,5 +1,5 @@
 import React from "react";
-import { Inicial } from "../routes/CaminhosPaginas";
+import { Inicial } from "../rotas/CaminhosPaginas";
 import { useHistory } from "react-router-dom";
 
 const Cabecalho = () => {
