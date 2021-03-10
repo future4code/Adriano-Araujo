@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import EntradaGeral from "../../hooks/EntradaGeral";
+import useEntradaGeral from "../../hooks/useEntradaGeral";
 import { useHistory } from "react-router-dom";
 import { inicialPrivada } from "../../rotas/CaminhosPaginas";
 
 const Login = () => {
-  const [email, alteraEmail] = EntradaGeral("");
-  const [senha, alteraSenha] = EntradaGeral("");
+  const [email, alteraEmail] = useEntradaGeral("");
+  const [senha, alteraSenha] = useEntradaGeral("");
   const history = useHistory();
 
   const enviar = () => {
@@ -15,13 +15,7 @@ const Login = () => {
       password: senha,
     };
 
-    const header = (token) => {
-      return {
-        headers: {
-          auth: token
-        }
-      };
-    };
+   
     axios.post(
       "https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/login",
       body

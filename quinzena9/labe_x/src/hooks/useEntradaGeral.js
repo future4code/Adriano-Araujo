@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function EntradaGeral(valor) {
+function useEntradaGeral(valor) {
   const [entrada, setEntrada] = useState(valor);
 
   const alteraEntrada = (evento) => {
@@ -10,5 +10,5 @@ function EntradaGeral(valor) {
   return [entrada, alteraEntrada];
 };
 
-export default EntradaGeral;
+export default useEntradaGeral;
 
