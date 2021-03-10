@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import axios from "axios";
 import EntradaGeral from "../../hooks/EntradaGeral";
 import { useHistory } from "react-router-dom";
 import { inicialPrivada } from "../../rotas/CaminhosPaginas";
@@ -7,6 +8,37 @@ const Login = () => {
   const [email, alteraEmail] = EntradaGeral("");
   const [senha, alteraSenha] = EntradaGeral("");
   const history = useHistory();
+
+  const enviar = () => {
+    const body = {
+      email: email,
+      password: senha,
+    };
+
+    const header = (token) => {
+      return {
+        headers: {
+          auth: token
+        }
+      };
+    };
+    axios.post(
+      "https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/login",
+      body
+    ).then((resposta)=>{
+      localStorage.setItem("token", resposta.data.token)
+      inicialPrivada(history)
+    }).catch((error)=>{
+      alert(error)
+    })
+  };
+
+  useEffect(()=>{
+    const token = localStorage.getItem("token")
+    if(token){
+      inicialPrivada(history)
+    } 
+  },[history])
 
   return (
     <main>
@@ -17,10 +49,10 @@ const Login = () => {
         placeholder={"senha"}
         type={"password"}
         value={senha}
-        onchange={alteraSenha}
+        onChange={alteraSenha}
       />
 
-      <button onClick={() => inicialPrivada(history)}>ok</button>
+      <button onClick={enviar}>ok</button>
     </main>
   );
 };
