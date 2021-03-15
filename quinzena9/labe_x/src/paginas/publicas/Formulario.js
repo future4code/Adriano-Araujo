@@ -8,17 +8,20 @@ const Formulario = () => {
   const [nome, alteraNome] = useEntradaGeral("");
   const [idade, alteraIdade] = useEntradaGeral("");
   const [texto, alteraTexto] = useEntradaGeral("");
-  const [pais, alteraPais] = useEntradaGeral("");
   const [profissao, alteraProfissao] = useEntradaGeral("");
+  const [pais, alteraPais] = useState([]);
 
-  const [selecionarViagem, setSelecionarViagem] = useEntradaGeral();
+  const [selecionarViagem, setSelecionarViagem] = useEntradaGeral("");
   const [viagens, setViagens] = useState([]);
+
 
   const history = useHistory();
 
-  useEffect(() => {
-    pegaViagem();
-  }, []);
+  const paises = ()=>{
+    axios.get("https://restcountries.eu/rest/v2/all").then((resposta)=>{
+      alteraPais(resposta.data)
+    })
+  } 
 
   const pegaViagem = () => {
     const body = {
@@ -26,27 +29,42 @@ const Formulario = () => {
       age: idade,
       applicationText: texto,
       profession: profissao,
-      country: pais
-    };
-
-    axios
-      .get(
+      country: pais,
+    };axios.get(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/trips",
-        body, ).then((resposta) => {
-        setViagens(resposta.data.trips);
+        body
+      ).then((resposta)=>{
+      setViagens(resposta.data.trips)
       })
-      .catch((error) => {
-        console.log(error);
-      });
+    
   };
+  useEffect(()=>{
+    paises()
+  },[])
 
-  const aplicarViagem = () => {
+  useEffect(() => {
+    pegaViagem();
+  }, []);
+
+
+
+  const aplicarViagem = (evento) => {
+    evento.preventDefault();
+
+    const body = {
+      name: nome,
+      age: idade,
+      applicationText: texto,
+      profession: profissao,
+      country: pais,
+    };
     axios
       .post(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/trips/${selecionarViagem}/${selecionarViagem.id}/apply`,
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/trips/${viagens.id}/apply`,
+        body
       )
-      .then((resposta) => {
-        console.log(resposta.data)
+      .then(() => {
+       alert("Candidatura feita com sucesso!")
       })
       .catch((error) => {
         console.log(error);
@@ -57,7 +75,6 @@ const Formulario = () => {
     evento.preventDefault(evento);
   };
 
-  console.log(selecionarViagem)
   return (
     <main>
       <h1>Candidate-se!</h1>
@@ -104,7 +121,12 @@ const Formulario = () => {
         />
 
         <p>País:</p>
-        <input value={pais} onChange={alteraPais} />
+        <select value={pais}  onChange={alteraPais}>
+        {pais.map((lista)=>{
+          return <option> {lista.name} </option>
+        })}
+         </select>
+       
 
         <p>Viagens:</p>
         <select
@@ -117,7 +139,9 @@ const Formulario = () => {
           })}
         </select>
       </form>
-      <button type={"submit"} onClick={aplicarViagem}>Enviar</button>
+      <button type={"submit"} onClick={aplicarViagem}>
+        Enviar
+      </button>
 
       <button type={"button"} onClick={() => voltar(history)}>
         voltar
