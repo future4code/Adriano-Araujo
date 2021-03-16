@@ -1,48 +1,52 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styled from "styled-components"
 import { voltar } from "../../rotas/CaminhosPaginas";
+import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-
-
-const Card = styled.section`
-border: 1px solid black;
-width:450px;
-`
+import {
+  Container,
+  Titulo,
+  ContainerViagens,
+  ViagemCard,
+} from "../EstilosGerais";
 
 const ListaViagens = () => {
   const [viagens, setViagens] = useState([]);
   const history = useHistory();
 
-  useEffect(()=>{
-    axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/trips').then(resposta =>{
-      setViagens(resposta.data.trips)
-    })
-  }, [])
+  useEffect(() => {
+    axios
+      .get(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/trips"
+      )
+      .then((resposta) => {
+        setViagens(resposta.data.trips);
+      });
+  }, []);
 
-  let listaViagens = viagens.map((planeta)=>{
+  let listaViagens = viagens.map((planeta) => {
     return (
-      <Card>
-        <p>{planeta.planet}</p>
-        <p>{planeta.name}</p>
+      <ViagemCard>
+        <h1>{planeta.planet}</h1>
+        <h3>{planeta.name}</h3>
         <p>{planeta.description}</p>
-      </Card>
-
-    )
-  })
+      </ViagemCard>
+    );
+  });
 
   return (
-    <main>
-      <h1>Viagens :P</h1>
-      <button onClick={() => voltar(history)}>voltar</button>
+    <Container>
+      <Titulo>Viagens</Titulo>
 
-      <section>{listaViagens}</section>
-     
-    
-
-
-   
-    </main>
+      <ContainerViagens>{listaViagens}</ContainerViagens>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => voltar(history)}
+      >
+        voltar
+      </Button>
+    </Container>
   );
 };
 

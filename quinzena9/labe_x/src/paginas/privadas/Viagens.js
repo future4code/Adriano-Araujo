@@ -1,10 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-
 import useEntradaGeral from "../../hooks/useEntradaGeral";
-
 import { voltar } from "../../rotas/CaminhosPaginas";
+import { Container, Titulo, ContainerFormulario } from "../EstilosGerais";
+import { Button } from "@material-ui/core";
+
 
 const Viagens = () => {
   const history = useHistory();
@@ -46,46 +47,47 @@ const Viagens = () => {
   };
 
   return (
-    <main>
-      <h1>Criar de viagens </h1>
+    <Container>
+      <Titulo>Criar de viagens </Titulo>
 
-      <form onSubmit={submeter}>
-        <p>Nome</p>
+      <ContainerFormulario onSubmit={submeter}>
+        <label>Nome</label>
         <input onChange={alteraNome} name={"nome"} value={nome} />
-        <p>planeta</p>
+        <label>planeta</label>
         <input
           onChange={alteraPlaneta}
           name={"planeta"}
           value={planeta}
         />
-        <p>data</p>
+        <label>data</label>
         <input
           onChange={alteraData}
           name={"data"}
           value={data}
         />
-        <p>descrição</p>
+        <label>descrição</label>
         <input
           onChange={alteraDescricao}
           name={"descrição"}
           value={descricao}
         />
-        <p>Duração em dias</p>
+        <label>Duração em dias</label>
         <input
           label={"Duração em dias"}
           onChange={alteraDuracao}
           name={"duracao"}
           value={duracao}
         />
-      </form>
-      <button type={"submit"} onClick={criarViagem}>
+      </ContainerFormulario>
+      <br/>
+      <Button color="primary" variant="outlined" type={"submit"} onClick={criarViagem}>
         Criar
-      </button>
-
-      <button type={"button"} onClick={() => voltar(history)}>
+      </Button>
+      <br/>
+      <Button color="secondary" type={"button"} onClick={() => voltar(history)}>
         voltar
-      </button>
-    </main>
+      </Button>
+    </Container>
   );
 };
 

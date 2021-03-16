@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { voltar } from "../../rotas/CaminhosPaginas";
 import useEntradaGeral from "../../hooks/useEntradaGeral";
 import { useHistory } from "react-router-dom";
+import { Container, Titulo, ContainerFormulario } from "../EstilosGerais";
+import { Button } from "@material-ui/core";
+
 import axios from "axios";
 
 const Formulario = () => {
@@ -9,22 +12,18 @@ const Formulario = () => {
   const [idade, alteraIdade] = useEntradaGeral("");
   const [texto, alteraTexto] = useEntradaGeral("");
   const [profissao, alteraProfissao] = useEntradaGeral("");
-  const [paisUsuario, alteraPaisUsuario] = useEntradaGeral("")
+  const [paisUsuario, alteraPaisUsuario] = useEntradaGeral("");
   const [selecionarViagem, setSelecionarViagem] = useEntradaGeral("");
   const [viagens, setViagens] = useState([]);
-  const [pais, setPais] =  useState([])
-
-
+  const [pais, setPais] = useState([]);
 
   const history = useHistory();
 
-  const paises = ()=>{
-    axios.get("https://restcountries.eu/rest/v2/all").then((resposta)=>{
-      setPais(resposta.data)
-    })
-  } 
-
-  
+  const paises = () => {
+    axios.get("https://restcountries.eu/rest/v2/all").then((resposta) => {
+      setPais(resposta.data);
+    });
+  };
 
   const pegaViagem = () => {
     const body = {
@@ -33,23 +32,23 @@ const Formulario = () => {
       applicationText: texto,
       profession: profissao,
       country: pais,
-    };axios.get(
+    };
+    axios
+      .get(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/trips",
         body
-      ).then((resposta)=>{
-      setViagens(resposta.data.trips)
-      })
-    
+      )
+      .then((resposta) => {
+        setViagens(resposta.data.trips);
+      });
   };
-  useEffect(()=>{
-    paises()
-  },[pais])
+  useEffect(() => {
+    paises();
+  }, [pais]);
 
   useEffect(() => {
     pegaViagem();
   }, [viagens]);
-
-
 
   const aplicarViagem = (evento) => {
     evento.preventDefault();
@@ -67,25 +66,25 @@ const Formulario = () => {
         body
       )
       .then(() => {
-       alert("Candidatura feita com sucesso!")
+        alert("Candidatura feita com sucesso!");
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  console.log(pais)
 
   const submeter = (evento) => {
     evento.preventDefault(evento);
   };
 
   return (
-    <main>
-      <h1>Candidate-se!</h1>
+    <Container>
+      <Titulo>Candidate-se!</Titulo>
 
-      <form onSubmit={submeter}>
-        <p>Nome:</p>
-        <input
+    <ContainerFormulario onSubmit={submeter}>
+
+      <label>Nome:</label>
+      <input
           name={"nome"}
           value={nome}
           type={"text"}
@@ -94,8 +93,8 @@ const Formulario = () => {
           required
         />
 
-        <p>Idade:</p>
-        <input
+      <label>Idade:</label>
+      <input
           name={"idade"}
           value={idade}
           type={"number"}
@@ -104,8 +103,8 @@ const Formulario = () => {
           required
         />
 
-        <p>Texto de aplicação:</p>
-        <input
+      <label>Texto de aplicação:</label>
+      <input
           name={"texto"}
           value={texto}
           type={"text"}
@@ -114,8 +113,8 @@ const Formulario = () => {
           required
         />
 
-        <p>Profissão:</p>
-        <input
+      <label>Profissão:</label>
+      <input
           name={"profissao"}
           value={profissao}
           type={"text"}
@@ -124,16 +123,15 @@ const Formulario = () => {
           required
         />
 
-        <p>País:</p>
-        <select value={pais}  onChange={alteraPaisUsuario}>
-        {pais.map((lista)=>{
-          return <option> {lista.name} </option>
-        })}
-         </select>
-       
+      <label>País:</label>
+      <select value={pais} onChange={alteraPaisUsuario}>
+          {pais.map((lista) => {
+            return <option> {lista.name} </option>;
+          })}
+        </select>
 
-        <p>Viagens:</p>
-        <select
+      <label>Viagens:</label>
+      <select
           name="viagem"
           value={selecionarViagem}
           onChange={setSelecionarViagem}
@@ -142,15 +140,18 @@ const Formulario = () => {
             return <option value={viagem.id}> {viagem.name} </option>;
           })}
         </select>
-      </form>
-      <button type={"submit"} onClick={aplicarViagem}>
-        Enviar
-      </button>
 
-      <button type={"button"} onClick={() => voltar(history)}>
+      </ContainerFormulario>
+     <br/>
+      <Button color="primary" variant="outlined" type={"submit"} onClick={aplicarViagem}>
+        Enviar
+      </Button>
+      <br />
+
+      <Button color="secondary" type={"button"} onClick={() => voltar(history)}>
         voltar
-      </button>
-    </main>
+      </Button>
+    </Container>
   );
 };
 

@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
-// import useEntradaGeral from "../../hooks/useEntradaGeral";
-
 import { voltar } from "../../rotas/CaminhosPaginas";
+import { Button } from "@material-ui/core";
+
+import {
+  Container,
+  Titulo,
+  ContainerViagens,
+  ViagemCard,
+} from "../EstilosGerais";
 
 const Administrar = () => {
   const [viagem, setViagem] = useState({});
-  const [candidaturas, setCandidaturas] = useState([])
+  const [candidaturas, setCandidaturas] = useState([]);
   const { id } = useParams();
 
   const history = useHistory();
 
   useEffect(() => {
     pegaDetalhes();
-  },[]);
-
+  }, []);
 
   const pegaDetalhes = () => {
     axios
@@ -28,41 +33,38 @@ const Administrar = () => {
         }
       )
       .then((resposta) => {
-        setViagem(resposta.data.trip)
+        setViagem(resposta.data.trip);
         setCandidaturas(resposta.data.trip.candidates);
-
-
       })
       .catch((erro) => {
         console.log(erro);
       });
   };
+
+  let candidatos = candidaturas.map((cada) => {
+    return (
+      <ViagemCard>
+        <h1>{cada.name}</h1>
+        <h3>Idade:{cada.age}</h3>
+        <h3>Profissão:{cada.profession}</h3>
+        {/* <p>{cada.applicationText}</p> */}
+      </ViagemCard>
+    );
+  });
   return (
-    <main>
-      <h1>Detalhes</h1>
+    <Container>
+      <Titulo>Detalhes</Titulo>
 
-     
-         
-   <article>
-     {candidaturas.map((cada)=>{
-       return(<section>
-         <p>{cada.name}</p>
-         <p>{cada.age}</p>
-         <p>{cada.profession}</p>
-         <p>{cada.applicationText}</p>
-       
+      <ContainerViagens>{candidatos}</ContainerViagens>
 
-       </section>)
-     })}
-     
-
-     </article>
-
-      
-     
-
-      <button onClick={() => voltar(history)}>voltar</button>
-    </main>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => voltar(history)}
+      >
+        voltar
+      </Button>
+    </Container>
   );
 };
 

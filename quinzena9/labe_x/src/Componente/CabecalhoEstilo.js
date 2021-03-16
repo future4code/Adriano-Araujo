@@ -10,5 +10,9 @@ padding-top:1rem;
 
 `
 export const TituloLogo = styled.img`
-width:11rem;
+width:10rem;
+&:hover{
+    filter:invert(100%);
+}
+
 `
