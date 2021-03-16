@@ -9,8 +9,8 @@ const Formulario = () => {
   const [idade, alteraIdade] = useEntradaGeral("");
   const [texto, alteraTexto] = useEntradaGeral("");
   const [profissao, alteraProfissao] = useEntradaGeral("");
-  const [pais, alteraPais] = useState([]);
-
+  const [pais, alteraPais] =  useState([])
+  const [paisUsuario, alteraPaisUsuario] = useEntradaGeral("")
   const [selecionarViagem, setSelecionarViagem] = useEntradaGeral("");
   const [viagens, setViagens] = useState([]);
 
@@ -22,6 +22,8 @@ const Formulario = () => {
       alteraPais(resposta.data)
     })
   } 
+
+  
 
   const pegaViagem = () => {
     const body = {
@@ -40,7 +42,7 @@ const Formulario = () => {
   };
   useEffect(()=>{
     paises()
-  },[])
+  },[alteraPais])
 
   useEffect(() => {
     pegaViagem();
@@ -70,6 +72,7 @@ const Formulario = () => {
         console.log(error);
       });
   };
+  console.log(pais)
 
   const submeter = (evento) => {
     evento.preventDefault(evento);
@@ -121,7 +124,7 @@ const Formulario = () => {
         />
 
         <p>País:</p>
-        <select value={pais}  onChange={alteraPais}>
+        <select value={pais}  onChange={alteraPaisUsuario}>
         {pais.map((lista)=>{
           return <option> {lista.name} </option>
         })}
