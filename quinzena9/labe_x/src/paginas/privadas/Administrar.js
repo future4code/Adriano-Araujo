@@ -6,14 +6,15 @@ import axios from "axios";
 import { voltar } from "../../rotas/CaminhosPaginas";
 
 const Administrar = () => {
-  const [probacionistas, alteraProbacionistas] = useState({});
-  const pathParams = useParams();
-  const id = pathParams.id
+  const [viagem, setViagem] = useState({});
+  const [candidaturas, setCandidaturas] = useState([])
+  const { id } = useParams();
+
   const history = useHistory();
 
   useEffect(() => {
     pegaDetalhes();
-  });
+  },[]);
 
 
   const pegaDetalhes = () => {
@@ -22,30 +23,43 @@ const Administrar = () => {
         `https://us-central1-labenu-apis.cloudfunctions.net/labeX/araujo-muyembe/trip/${id}`,
         {
           headers: {
-            auth: localStorage.getItem("token"),
+            auth: window.localStorage.getItem("token"),
           },
         }
       )
       .then((resposta) => {
-        alteraProbacionistas(resposta.data.trip);
+        setViagem(resposta.data.trip)
+        setCandidaturas(resposta.data.trip.candidates);
+
 
       })
       .catch((erro) => {
         console.log(erro);
       });
   };
- 
   return (
     <main>
       <h1>Detalhes</h1>
 
-      <div>
+     
          
+   <article>
+     {candidaturas.map((cada)=>{
+       return(<section>
+         <p>{cada.name}</p>
+         <p>{cada.age}</p>
+         <p>{cada.profession}</p>
+         <p>{cada.applicationText}</p>
+       
 
-      </div>
-      <div>
+       </section>)
+     })}
+     
+
+     </article>
+
       
-      </div>
+     
 
       <button onClick={() => voltar(history)}>voltar</button>
     </main>

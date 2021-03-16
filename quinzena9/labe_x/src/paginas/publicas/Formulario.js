@@ -9,17 +9,18 @@ const Formulario = () => {
   const [idade, alteraIdade] = useEntradaGeral("");
   const [texto, alteraTexto] = useEntradaGeral("");
   const [profissao, alteraProfissao] = useEntradaGeral("");
-  const [pais, alteraPais] =  useState([])
   const [paisUsuario, alteraPaisUsuario] = useEntradaGeral("")
   const [selecionarViagem, setSelecionarViagem] = useEntradaGeral("");
   const [viagens, setViagens] = useState([]);
+  const [pais, setPais] =  useState([])
+
 
 
   const history = useHistory();
 
   const paises = ()=>{
     axios.get("https://restcountries.eu/rest/v2/all").then((resposta)=>{
-      alteraPais(resposta.data)
+      setPais(resposta.data)
     })
   } 
 
@@ -42,11 +43,11 @@ const Formulario = () => {
   };
   useEffect(()=>{
     paises()
-  },[alteraPais])
+  },[pais])
 
   useEffect(() => {
     pegaViagem();
-  }, []);
+  }, [viagens]);
 
 
 
