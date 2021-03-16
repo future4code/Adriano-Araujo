@@ -1,14 +1,16 @@
 import React from "react";
-import { Inicial } from "../routes/CaminhosPaginas";
+import { Inicial } from "../rotas/CaminhosPaginas";
 import { useHistory } from "react-router-dom";
+import {CabecalhoGeral,TituloLogo} from "./CabecalhoEstilo"
+import Inicio from "../img/inicio.png"
 
 const Cabecalho = () => {
   const history = useHistory();
 
   return (
-    <header>
-      <button onClick={() => Inicial(history)}>Começo</button>
-    </header>
+    <CabecalhoGeral>
+      <TituloLogo src={Inicio} onClick={() => Inicial(history)}/>
+    </CabecalhoGeral>
   );
 };
 
